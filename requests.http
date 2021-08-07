@@ -1,0 +1,26 @@
+# Отзывы
+## NotifyReview
+POST http://localhost:3000/api/review/notify
+Content-Type: application/json
+{
+	"name": "Тест 3",
+	"title": "Заголовок",
+	"description": "Описание тестовое",
+	"rating": 5,
+	"productId": "6041f7a3b3e24b1e15e98d38"
+}
+
+## AddReview
+POST http://localhost:3000/api/review/create
+Content-Type: application/json
+{
+	"name": "Тест 3",
+	"title": "Заголовок",
+	"description": "Описание тестовое",
+	"rating": 5,
+	"productId": "6041f7a3b3e24b1e15e98d38"
+}'
+
+## ReviewFind
+GET http://localhost:3000/api/review/byProduct/603f519c245f4018275b73f1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImEyQGEucnUiLCJpYXQiOjE2MTQ3ODM5Njh9.qME9vjdg4P_2xDJOAHDXPAdXKNtfncNSjlEy6g-nuTA
