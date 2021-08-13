@@ -21,7 +21,9 @@ export class ReviewService {
   }
 
   findByProductId(productId: string) {
-    return this.reviewModel.findById(productId).exec();
+    return this.reviewModel
+      .find({ productId: Types.ObjectId(productId) })
+      .exec();
   }
 
   deleteByProductId(productId: string) {
