@@ -1,5 +1,3 @@
-# Отзывы
-## NotifyReview
 POST http://localhost:3000/api/review/notify
 Content-Type: application/json
 {
@@ -10,7 +8,9 @@ Content-Type: application/json
 	"productId": "6041f7a3b3e24b1e15e98d38"
 }
 
-## AddReview
+
+###
+
 POST http://localhost:3000/api/review/create
 Content-Type: application/json
 {
@@ -21,6 +21,36 @@ Content-Type: application/json
 	"productId": "6041f7a3b3e24b1e15e98d38"
 }'
 
-## ReviewFind
+
+###
+
 GET http://localhost:3000/api/review/byProduct/603f519c245f4018275b73f1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImEyQGEucnUiLCJpYXQiOjE2MTQ3ODM5Njh9.qME9vjdg4P_2xDJOAHDXPAdXKNtfncNSjlEy6g-nuTA
+
+###
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+{
+  "login": "a@a.com",
+  "password": "1"
+}
+
+###
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+{
+  "login": "a@a.com",
+  "password": "1"
+}
+
+HTTP/1.1 200 - OK
+x-powered-by: Express
+content-type: application/json; charset=utf-8
+content-length: 147
+etag: W/"93-8Zhzxj3HhuwBLn1a3ZBjTjILL5Y"
+date: Mon, 30 Aug 2021 15:18:56 GMT
+connection: close
+
+{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20iLCJpYXQiOjE2MzAzMzY3MzZ9.u63SRaADFesYyvscaxBwqLDpxs4uPkSgrs9JJLjXgIk"}
