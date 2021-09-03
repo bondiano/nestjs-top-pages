@@ -11,6 +11,7 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
+import { IdValidationPipe } from 'src/pipes/id-validation.pipe';
 
 import { JWTAuthGuard } from '../auth/guards/jwt.guard';
 
@@ -30,7 +31,7 @@ export class ReviewController {
 
   @UseGuards(JWTAuthGuard)
   @Delete(':id')
-  async delete(@Param('id') id: string) {
+  async delete(@Param('id', IdValidationPipe) id: string) {
     const deletedDoc = await this.reviewService.delete(id);
 
     if (!deletedDoc) {

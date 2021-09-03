@@ -1,4 +1,4 @@
-import { prop } from '@typegoose/typegoose';
+import { prop, index } from '@typegoose/typegoose';
 import { Base, TimeStamps } from '@typegoose/typegoose/lib/defaultClasses';
 
 export enum TopLevelCategory {
@@ -32,12 +32,13 @@ export class TopPageAdvantage {
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface TopPageModel extends Base {}
+@index({ '$**': 'text' })
 export class TopPageModel extends TimeStamps {
   @prop({ enum: TopLevelCategory })
-  firstLevelCategory: TopLevelCategory;
+  firstCategory: TopLevelCategory;
 
   @prop()
-  secondLevelCategory: string;
+  secondCategory: string;
 
   @prop({ unique: true })
   alias: string;
