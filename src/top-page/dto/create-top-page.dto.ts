@@ -6,6 +6,7 @@ import {
   ValidateNested,
   IsArray,
   IsEnum,
+  IsDate,
 } from 'class-validator';
 
 import { TopLevelCategory } from '../top-page.model';
@@ -22,6 +23,9 @@ export class HHDataDto {
 
   @IsNumber()
   seniorSalary: number;
+
+  @IsDate()
+  updatedAt: Date;
 }
 
 export class TopPageAdvantageDto {
